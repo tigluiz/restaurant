@@ -16,6 +16,8 @@ group :development, :test do
   gem 'shoulda-matchers'
   gem "pry"
   gem "pry-nav"
+  gem 'factory_girl_rails'
+  gem 'database_cleaner'
 end
 group :test do
   gem 'capybara'
