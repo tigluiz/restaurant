@@ -1,9 +1,9 @@
+<h1>Faça seu pedido</h1>
 <%= simple_form_for @order do |f| %>
   <%= f.input :table, collection: 1..20 %>
   <%= f.simple_fields_for :sandwiches do |sandwich| %>
     <%= sandwich.select :name, Sandwich.all.map { |r| [r.name, r.id,] }, include_blank: true %>
     <%= sandwich.input :quantity, collection: 1..5 %>
   <% end %>
-  
   <%= f.button :submit %>
 <% end %>
