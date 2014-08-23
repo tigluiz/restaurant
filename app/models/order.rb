@@ -5,6 +5,7 @@ class Order < ActiveRecord::Base
   validates :table, presence: true
 
   has_many :line_items
+  has_and_belongs_to_many :sandwiches
 
   def initialize_order
     update_attributes(:number => (id * CONSTANT_FACTOR) + CONSTANT_NUMBER)
