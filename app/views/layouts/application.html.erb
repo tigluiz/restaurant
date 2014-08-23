@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Restaurant</title>
-  <%= stylesheet_link_tag    'application', media: 'all' %>
-  <%= javascript_include_tag 'application' %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-
-<%= yield %>
-
-</body>
+  <head>
+    <title>Restaurant</title>
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <header class="page-header">
+      <div class="navbar-inner">
+        <div class="container">
+          <h1>
+            <%= link_to "Krusty Burger", root_path, id: "logo" %>
+          </h1>
+          <ul class="nav nav-tabs pull-right">
+            <li><%= link_to "Criar pedido", "" %></li>
+          </ul>
+        </div>
+      </div>
+    </header>
+    <div class="container">
+      <%= yield %>
+    </div>
+    <%= javascript_include_tag 'application' %></body>
 </html>
