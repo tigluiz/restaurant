@@ -11,5 +11,10 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap.min
  *= require_self
  */
+.page-header{
+  background-color: aliceblue;
+  margin: 0px 0 20px;
+}
