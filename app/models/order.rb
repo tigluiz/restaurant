@@ -2,6 +2,7 @@ class Order < ActiveRecord::Base
   CONSTANT_NUMBER = 1782
   CONSTANT_FACTOR = 17
   after_create :initialize_order
+  validates :table, presence: true
 
   has_many :line_items
 
