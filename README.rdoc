@@ -1,28 +1,35 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Rails 4.1.5
+Ruby 2.1.2
+bancos de dados SQLite
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Esse projeto tem como objetivo criar uma aplicação de restaurante.
 
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+== Minhas considerações
+
+* Infelizmente pela falta de tempo, não consegui concluir todos os requisitos, mas logo abaixo digo como faria nesses casos.
+
+* A arquitetura dessa aplicação acabou se alterando de acordo com objetivo a ser alcançado. Isso pode ser observado pelas migrações.
+Nesse caso as mudança partiram de uma versão mais simples para uma mais complexa.
+
+* A idéia é ter um admin em que o cozinheiro e as garçonetes possam acompanhar os pedidos,criarem novos lanches e bebidas e alterarem o status dos pedidos.
+Para isso utilizei a gem active admin para que é uma boa opção para resultados rápidos e de acordo com o objetivo.
+
+* O sistema possui uma arquitetura em que, a cada novo pedido um carrinho é criado para que com isso o estado das comidas e bebidas sejam armazenados
+evitando que alguma troca de preço alterasse o valor do carrinho.
+
+* Tanto o gerenciamento do carrinho quanto da criação da ordem foram encapulados em gerenciadores para que possa ser utilizado na API.
+
+* Testes realizados de maneira manual e automáticos (Unitários, controllers e integração - Capybara para reproduzir o navegador)
+
+== Todos
+* API - De acordo com os requerimento a api seria criada em um novo namespace na aplicação. Com isso não utilizaria as stacks normais da versão web.
+Com isso responderia mais rápido para utilização como serviços de criação de pedidos via outras aplicações ou mobile.
+
+* Utilização do gerenciador de pedido para a criação do mesmo.
+
+* Criar autenticação via token para segurança da API
+
+* Melhorar a criação/atualização do cart via ajax, para melhor interação (UX) do pedido.
