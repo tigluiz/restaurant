@@ -11,6 +11,7 @@
  * file per style scope.
  *
  *= require bootstrap.min
+ *= require cart
  *= require_self
  */
 .page-header{
