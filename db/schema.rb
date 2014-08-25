@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140823171236) do
+ActiveRecord::Schema.define(version: 20140824224200) do
 
   create_table "active_admin_comments", force: true do |t|
     t.string   "namespace"
@@ -46,8 +46,35 @@ ActiveRecord::Schema.define(version: 20140823171236) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "cart_items", force: true do |t|
+    t.integer  "quantity"
+    t.integer  "cart_id"
+    t.string   "genre"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "price",      precision: 8, scale: 2
+    t.string   "name"
+    t.string   "item_type"
+  end
+
+  add_index "cart_items", ["cart_id"], name: "index_cart_items_on_cart_id"
+
+  create_table "carts", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "table"
+  end
+
+  create_table "items", force: true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.decimal  "price",      precision: 8, scale: 2
+    t.string   "item_type"
+  end
+
   create_table "line_items", force: true do |t|
-    t.string   "food_type"
+    t.string   "item_type"
     t.integer  "quantity"
     t.string   "name"
     t.decimal  "price",      precision: 8, scale: 2
@@ -64,21 +91,6 @@ ActiveRecord::Schema.define(version: 20140823171236) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "table"
-  end
-
-  create_table "orders_sandwiches", force: true do |t|
-    t.integer "order_id"
-    t.integer "sandwich_id"
-  end
-
-  add_index "orders_sandwiches", ["order_id"], name: "index_orders_sandwiches_on_order_id"
-  add_index "orders_sandwiches", ["sandwich_id"], name: "index_orders_sandwiches_on_sandwich_id"
-
-  create_table "sandwiches", force: true do |t|
-    t.integer  "quantity",   default: 1
-    t.string   "name"
-    t.datetime "created_at"
-    t.datetime "updated_at"
   end
 
 end
