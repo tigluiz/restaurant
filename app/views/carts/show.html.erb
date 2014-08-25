@@ -1,0 +1,20 @@
+<h1>Confirme seu pedido</h1>
+<br />
+<h4>Mesa</h4>
+<p><%= @cart.table %>
+</p>
+<ul>
+  <% @cart.cart_items.each do |item| %>
+    <li>
+      <%= item.name %>
+      <%= item.quantity %>
+    </li>
+  <% end %>
+</ul>
+
+<div id='total'>
+  <h4>Total</h4>
+  <%= @cart.total %>
+</div>
+
+<%= link_to "Finalizar pedido", orders_create_path(@cart), method: "POST" %>

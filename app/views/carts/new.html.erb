@@ -1,0 +1,43 @@
+<h1>Faça seu pedido</h1>
+<div id="left">
+  <h4>Comidas</h4>
+  <ul>
+    <% @items.foods.all.each do |food| %>
+      <li>
+        <%= food.name %> | <%= number_to_currency food.price %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<div id="right">
+  <h4>Bebidas</h4>
+  <ul>
+    <% @items.drinks.all.each do |drink| %>
+      <li>
+        <%= drink.name %> | <%= number_to_currency drink.price %>
+      </li>
+    <% end %>
+  </ul>
+</div>
+<br />
+<div class="clear"></div>
+<div class="cart_form">
+  <%= nested_form_for @cart do |f|%>
+    <%= f.label "Mesa" %>
+    <%= f.select :table, options_for_select((1..45).to_a, 1) %>
+    <br />
+    <%= f.fields_for :cart_items do |ff| %>
+      <div>
+        <%= ff.label "Tipo" %>
+        <%= ff.select :genre, options_from_collection_for_select(@items.all, :id, :name) %>
+      </div>
+      <div>
+        <%= ff.label "Quantidade" %>
+        <%= ff.select :quantity, options_for_select((1..6).to_a, 1) %>
+      </div>
+        <%= ff.link_to_remove "Remover esse item" %>
+    <% end %>
+    <%= f.link_to_add "Adicionar item", :cart_items %>
+    <%= f.button :submit%>
+  <% end %>
+</div>
