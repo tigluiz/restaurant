@@ -11,8 +11,7 @@ Esse projeto tem como objetivo criar uma aplicação de restaurante.
 
 * Infelizmente pela falta de tempo, não consegui concluir todos os requisitos, mas logo abaixo digo como faria nesses casos.
 
-* A arquitetura dessa aplicação acabou se alterando de acordo com objetivo a ser alcançado. Isso pode ser observado pelas migrações.
-Nesse caso as mudança partiram de uma versão mais simples para uma mais complexa.
+* A arquitetura dessa aplicação acabou se alterando de acordo com objetivo a ser alcançado. Isso pode ser observado pelas migrações. Nesse caso as mudança partiram de uma versão mais simples para uma mais complexa.
 
 * A idéia é ter um admin em que o cozinheiro e as garçonetes possam acompanhar os pedidos,criarem novos lanches e bebidas e alterarem o status dos pedidos.
 Para isso utilizei a gem active admin para que é uma boa opção para resultados rápidos e de acordo com o objetivo.
@@ -25,11 +24,20 @@ evitando que alguma troca de preço alterasse o valor do carrinho.
 * Testes realizados de maneira manual e automáticos (Unitários, controllers e integração - Capybara para reproduzir o navegador)
 
 == Todos
-* API - De acordo com os requerimento a api seria criada em um novo namespace na aplicação. Com isso não utilizaria as stacks normais da versão web.
-Com isso responderia mais rápido para utilização como serviços de criação de pedidos via outras aplicações ou mobile.
+* API - De acordo com os requerimento a api seria criada em um novo namespace na aplicação. Com isso não utilizaria as stacks normais da versão web. Com isso responderia mais rápido para utilização como serviços de criação de pedidos via outras aplicações ou mobile.
 
 * Utilização do gerenciador de pedido para a criação do mesmo.
 
 * Criar autenticação via token para segurança da API
 
 * Melhorar a criação/atualização do cart via ajax, para melhor interação (UX) do pedido.
+
+== Considerações finais
+
+Foi bem interessante criar essa aplicação pois pude aplicar os conhcimento adquiridos até agora de programação e arquitetura.
+
+Apesar de não ter conseguido finalizar todos os requisitos, os outros cenários foram feitos e testados.
+
+Pelo tempo despendido não foi possível imaginar e testar todos os fluxos mas acho que está bem interessante pensando que o objetivo é entender como se resolve esse problema.
+
+Abs
