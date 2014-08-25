@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe Order, :type => :model do
   it { should validate_presence_of(:table) }
-  it { should have_and_belong_to_many(:sandwiches) }
+  it { should have_many(:line_items) }
 
   it "set number on create" do
     order = FactoryGirl.create(:order, id: "123")
